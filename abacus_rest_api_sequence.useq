@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.2.2" icons="true" automaticImage="PNG" generate-combined-fragments="true">  
+  <object id="1" language="java" name="com.abacus.example.personservices.PersonServicesApplication" 
+    project="person-services" 
+    file="/person-services/src/main/java/com/abacus/example/personservices/PersonServicesApplication.java" 
+    binary="false" label="personServicesApplication" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="37" y="0"/>    
+    <execution id="2">      
+      <position height="57" width="179" x="5" y="103"/>    
+    </execution>    
+    <execution id="5">      
+      <position height="19" width="179" x="5" y="218"/>    
+    </execution>    
+    <execution id="6">      
+      <position height="19" width="179" x="5" y="296"/>    
+    </execution>    
+    <execution id="7">      
+      <position height="19" width="179" x="5" y="433"/>    
+    </execution>  
+  </object>  
+  <object id="8" language="java" name="com.abacus.example.personservices.controller.PersonController" 
+    project="person-services" 
+    file="/person-services/src/main/java/com/abacus/example/personservices/controller/PersonController.java" 
+    binary="false" label="personController" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="97" y="0"/>    
+    <execution id="4">      
+      <position height="19" width="203" x="188" y="122"/>    
+    </execution>    
+    <execution id="9">      
+      <position height="57" width="203" x="188" y="199"/>    
+    </execution>    
+    <execution id="13">      
+      <position height="95" width="203" x="188" y="277"/>    
+    </execution>    
+    <execution id="17">      
+      <position height="19" width="7" x="286" y="315"/>    
+    </execution>    
+    <execution id="18">      
+      <position height="95" width="203" x="188" y="402"/>    
+    </execution>    
+    <execution id="22">      
+      <position height="19" width="7" x="286" y="440"/>    
+    </execution>  
+  </object>  
+  <object id="23" language="java" name="com.abacus.example.personservices.service.PersonService" 
+    project="person-services" 
+    file="/person-services/src/main/java/com/abacus/example/personservices/service/PersonService.java" binary="false" 
+    label="personService" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="297" y="0"/>    
+    <execution id="11">      
+      <position height="19" width="195" x="395" y="218"/>    
+    </execution>    
+    <execution id="24">      
+      <position height="95" width="195" x="395" y="180"/>    
+    </execution>    
+    <execution id="15">      
+      <position height="57" width="195" x="395" y="296"/>    
+    </execution>    
+    <execution id="20">      
+      <position height="57" width="195" x="395" y="421"/>    
+    </execution>  
+  </object>  
+  <message id="3" asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="10" 
+    operation="addPerson(com.abacus.example.personservices.model.Person):com.abacus.example.personservices.model.Person" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="11"/>  
+  </message>  
+  <message id="12" asynchronous="false">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="5"/>  
+  </message>  
+  <message id="14" operation="retrievePerson(java.lang.String):com.abacus.example.personservices.model.Person" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="15"/>  
+  </message>  
+  <message id="16" asynchronous="false">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="6"/>  
+  </message>  
+  <message id="19" operation="removePerson(java.lang.String):com.abacus.example.personservices.model.Person" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="20"/>  
+  </message>  
+  <message id="21" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="7"/>  
+  </message>  
+  <message id="25" asynchronous="false">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="9"/>  
+  </message>  
+  <message id="26" asynchronous="false">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="17"/>  
+  </message>  
+  <message id="27" asynchronous="false">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="22"/>  
+  </message>
+</sequence-diagram>
