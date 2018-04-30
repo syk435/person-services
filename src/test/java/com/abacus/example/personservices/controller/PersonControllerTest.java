@@ -21,8 +21,8 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import com.abacus.example.personservices.model.Person;
-import com.abacus.example.personservices.service.PersonService;
+import com.abacus.example.ingestionservices.model.Payload;
+import com.abacus.example.ingestionservices.service.IngestionServices;
 
 public class PersonControllerTest {
 	
@@ -30,17 +30,17 @@ public class PersonControllerTest {
 	private MockMvc mockMvc;
 
 	@MockBean
-	private PersonService personService;
+	private IngestionServices ingestionServices;
 
-	Person mockPerson = new Person("Sam", 15, "Atlanta");
+	Payload mockPerson = new Payload("Sam", 15, "Atlanta");
 
 	String exampleJson = "{\"name\":\"Sam\",\"age\": 15,\"locale\":\"Atlanta\"}";
 
 	@Test
 	public void testAddPerson() throws Exception {
 		//PUT testing
-		personService = new PersonService();
-		Person pResult = personService.addPerson(mockPerson);
+		ingestionServices = new IngestionServices();
+		Payload pResult = ingestionServices.addPerson(mockPerson);
 		System.out.println(pResult.toString());
 		String testRegex = ".*, name=Sam, age=15, locale=Atlanta.*";
 		assertTrue(pResult.toString().matches(testRegex));
@@ -49,8 +49,8 @@ public class PersonControllerTest {
 	@Test
 	public void testGetPerson() throws Exception {
 		//setup
-		personService = new PersonService();
-		Person pResult = personService.addPerson(mockPerson);
+		ingestionServices = new IngestionServices();
+		Payload pResult = ingestionServices.addPerson(mockPerson);
 		String res = pResult.toString();
 		System.out.println(res);
 		
@@ -59,7 +59,7 @@ public class PersonControllerTest {
 		System.out.println(data_id);
 		
 		//GET testing
-		Person pGet = personService.retrievePerson(data_id);	
+		Payload pGet = ingestionServices.retrievePerson(data_id);	
 		String testRegex = ".*, name=Sam, age=15, locale=Atlanta.*";
 		assertTrue(pGet.toString().matches(testRegex));
 	}
@@ -67,8 +67,8 @@ public class PersonControllerTest {
 	@Test
 	public void testRemovePerson() throws Exception {
 		//setup
-		personService = new PersonService();
-		Person pResult = personService.addPerson(mockPerson);
+		ingestionServices = new IngestionServices();
+		Payload pResult = ingestionServices.addPerson(mockPerson);
 		String res = pResult.toString();
 		System.out.println(res);
 		
@@ -77,10 +77,10 @@ public class PersonControllerTest {
 		System.out.println(data_id);
 		
 		//DEL testing
-		Person pGet = personService.removePerson(data_id);
+		Payload pGet = ingestionServices.removePerson(data_id);
 		String testRegex = ".*, name=Sam, age=15, locale=Atlanta.*";
 		assertTrue(pGet.toString().matches(testRegex));
-		pGet = personService.removePerson(data_id);
+		pGet = ingestionServices.removePerson(data_id);
 		assertTrue(pGet==null);
 	}
 	

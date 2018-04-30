@@ -1,12 +1,12 @@
-package com.abacus.example.personservices;
+package com.abacus.example.ingestionservices;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PersonServicesApplication {
+public class IngestionServicesApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PersonServicesApplication.class, args);
+		SpringApplication.run(IngestionServicesApplication.class, args);
 	}
 }

@@ -1,13 +1,13 @@
-package com.abacus.example.personservices.model;
+package com.abacus.example.ingestionservices.model;
 
-public class Person {
+public class Payload {
 	
 	private String id = "-1";
 	private String name;
 	private int age;
 	private String locale;
 	
-	public Person(String id, String name, int age, String locale) {
+	public Payload(String id, String name, int age, String locale) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -16,7 +16,7 @@ public class Person {
 		
 	}
 	
-	public Person(String name, int age, String locale) {
+	public Payload(String name, int age, String locale) {
 		super();
 		this.name = name;
 		this.locale = locale;
@@ -24,12 +24,12 @@ public class Person {
 		
 	}
 	
-	public Person(Person person) {
+	public Payload(Payload payload) {
 		super();
-		this.id = person.getId();
-		this.name = person.getName();
-		this.locale = person.getLocale();
-		this.age = person.getAge();
+		this.id = payload.getId();
+		this.name = payload.getName();
+		this.locale = payload.getLocale();
+		this.age = payload.getAge();
 	}
 
 	/**
