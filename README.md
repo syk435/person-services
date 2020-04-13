@@ -1,4 +1,3 @@
-![Abacus Image](https://abacusinsights.com/wp-content/uploads/2018/02/abacus-logo.png)
 # Sample Spring Boot REST API
 ### author: Salem Karani
 
